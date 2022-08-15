@@ -54,12 +54,10 @@ At a high-level, we have provided answers to the following key questions regardi
   
   - 72,458 roles will need to be filled once all retirement-eligible employees retire.
 <br>
-<br>
 
 - Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
 
   - In our estimation, there are not enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard's employees. Currently there are 1,549 mentorship-eligible employees and 72,458 expected vacancies. This would leave mentors with an expected 46 or 47 mentees to supervise each. We believe that is too much of a workload than should be expected from this program. It may be advisable to find ways to expand the mentorship-eligibility pool. One such way could be to broaden the mentorship-elibility age range.
-<br>
 <br>
 
 ### Addtional Tables for Further Research
