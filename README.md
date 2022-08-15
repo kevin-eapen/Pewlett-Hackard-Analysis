@@ -1,7 +1,7 @@
 # Pewlett Hackard Analysis
 
 ## Overview
-Pewlett Hackard is a large, long-standing company employing thousands of employees. The company has a large proportion of it's workforce belonging to the baby boomer generation, and these employees will be expected to reach their retirement soon. This anticipated en masse retirmement has been dubbed by executives of the company as the impending 'silver tsunami', and they would like to plan ahead and prepare the company for this massive change ahead.
+Pewlett Hackard is a large, long-standing company employing thousands of employees. The company has a large proportion of it's workforce belonging to the baby boomer generation, and these employees will be expected to reach their retirement soon. This anticipated en masse retirement has been dubbed by executives of the company as the impending "silver tsunami", and they would like to plan ahead to prepare the company for this massive change ahead.
 
 Our task in supporting Human Resources' employee research team, is to design and create an employee database in SQL (Structured Query Language). We will then query the database, using SQL, to derive the required analysis and determine how many people are retiring, as well as who will be eligible for a retirement package.
 
@@ -16,12 +16,12 @@ __ERD__ <br>
 
 ### Challenge Deliverable 1: The Number of Retiring Employees by Title
 
-To begin the analysis, we created a table called 'retirement_titles' (displayed below) that holds all the titles of employees who were born between January 1, 1952 and December 31, 1955. The table returned 133,766 rows of data. However, some employee ID numbers were duplicated since a single employee can hold multiple titles throughout their career at the company. 
+To begin this part of the analysis, we created a table called 'retirement_titles' (displayed below) that holds all the titles of employees who were born between January 1, 1952 and December 31, 1955. The table returned 133,766 rows of data. However, some employee ID numbers were duplicated since a single employee can hold multiple titles throughout their career at the company. 
 
 __retirement_titles__
 ![table](Images/retirement_titles.png)
 
-In order to deal with the duplicate rows so that only a single title is displayed for each unique employee ID, we created another table called 'unique_titles' (displayed below). The 'unique_titles' table holds the employee ID, first name, last name, and the most recent title for each employee in the 'retirement_titles' table. The table returned 72,458 rows of data. This means that there were over 60,000 duplicate rows removed, leaving us with 72,458 individual current employees reaching retirement soon.  
+In order to deal with the duplicate rows, so that only a single title is displayed for each unique employee ID, we created another table called 'unique_titles' (displayed below). The 'unique_titles' table holds the employee ID, first name, last name, and the most recent title for each employee in the 'retirement_titles' table. The table returned 72,458 rows of data. This means that there were over 60,000 duplicate rows removed, leaving us with 72,458 individual current employees reaching retirement soon.  
 
 __unique_titles__
 ![table](Images/unique_titles.png)
@@ -33,7 +33,7 @@ __retiring_titles__ <br>
 
 ### Challenge Deliverable 2: The Employees Eligible for the Mentorship Program
 
-Our next goal was to identify employees who are eligible to participate in a mentorship program. We defined mentorship eligible employees as current employees who were born between January 1, 1965 and December 31, 1965. We created the table 'mentorship_eligibility' (displayed below) to hold identifying information on each current employee born in the mentorship-eligibility defined date range. The information in the table includes, employee ID, first name, last name, birth date, start of employment date, a column ('to_date') that identifies the employee as currently employed when the value is '9999'01'01', and the employee's job title. The table returned 1,549 rows, and each row contains a distinct employee ID signifying that there are 1,549 mentorship-eligible current employees.
+Our next goal was to identify employees who are eligible to participate in a mentorship program. We defined mentorship eligible employees as current employees who were born between January 1, 1965 and December 31, 1965. We created the table 'mentorship_eligibility' (displayed below) to hold identifying information on each current employee born in the mentorship-eligibility defined date range. The information in the table includes, employee ID, first name, last name, birth date, start of employment date, a column ('to_date') that identifies the employee as currently employed when the value is '9999-01-01', and the employee's job title. The table returned 1,549 rows, and each row contains a distinct employee ID signifying that there are 1,549 mentorship-eligible current employees.
 
 __mentorship_eligibility__
 ![table](Images/mentorship_eligibility.png)
@@ -48,18 +48,17 @@ __mentorship_eligibility__
 
 ### Key Questions Answered
 
-At a high-level, we have provided answers to the following key questions regarding the upcoming the Pewlett Hackard's expected upcoming mass retirement challenge.
-
-Provide high-level responses to the following questions, then provide two additional queries or tables that may provide more insight into the upcoming "silver tsunami."
+At a high-level, we have provided answers to the following key questions regarding Pewlett Hackard's expected upcoming mass retirement challenge.
 
 - How many roles will need to be filled as the "silver tsunami" begins to make an impact?
   
-  - 72,458 roles will need to be filled once all retirement-eligible emplpyees retire.
+  - 72,458 roles will need to be filled once all retirement-eligible employees retire.
 <br>
 <br>
+
 - Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
 
-  - In our estimation, there are not enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard's employees. Currently there are 1,549 mentorship-eligible employees and 72,458 expected vacancies. This would leave mentors with an expected 46 or 47 mentees to supervise each. We believe that is too much of workload than should be expected from this program. It may be advisable to find ways to expand the mentorship-eligibility pool. One such way could be to broaden the mentorship-elibility age range.
+  - In our estimation, there are not enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard's employees. Currently there are 1,549 mentorship-eligible employees and 72,458 expected vacancies. This would leave mentors with an expected 46 or 47 mentees to supervise each. We believe that is too much of a workload than should be expected from this program. It may be advisable to find ways to expand the mentorship-eligibility pool. One such way could be to broaden the mentorship-elibility age range.
 <br>
 <br>
 
@@ -79,4 +78,4 @@ __Table 2__
 __mentorship_titles__ <br>
 ![table](Images/mentorship_titles.png)
 
-The above table returns counts per title of mentorship-elibile employees when eligibility includes employees born from January 1, 1964 to December 31, 1965. This table confirms there is an even spread and consistent ratio of mentors to mentees across all titles. This table does provide two interesting insights. There are more Staff than Senior Staff in the mentorship eligibility pool, while the inverse is true for the retiring employees. Perhaps the mentorshiple-eligble Staff will be ready for promotion to Senior Staff once "silver tsunami" wave hits. Such a promotion would not only fill a portion of the expected Senior Staff vacancies, but also provide more mentorship-eligible Senior Staff newly hired Senior Staff. Alternatvely, perhaps Senior Staff and Staff should be treated equivalently for the purposes of the mentorship program, since mentorship eligibity by age already factors in an expected level of experience. Additionally, it is apparent that there are no mentorship-eligible Managers, while 2 Manager vacancies are expected to be filled with new hires. Perhaps different mentorship-elibility requirements should be determined for the Manager title, so that the incoming Manager hires are included in the mentorship program.
+The above table returns counts per title of mentorship-elibile employees when eligibility includes employees born from January 1, 1964 to December 31, 1965. This table confirms there is an even spread and consistent ratio of mentors to mentees across all titles. This table does provide two interesting insights. There are more Staff than Senior Staff in the mentorship eligibility pool, while the inverse is true for the retiring employees. Perhaps the mentorshiple-eligble Staff will be ready for promotion to Senior Staff once the "silver tsunami" wave hits. Such a promotion would not only fill a portion of the expected Senior Staff vacancies, but also provide more mentorship-eligible Senior Staff to mentor newly hired Senior Staff. Alternatvely, Senior Staff and Staff could be treated equivalently for the purposes of the mentorship program, since mentorship eligibity by age already factors in an expected level of experience. Additionally, it is apparent that there are no mentorship-eligible Managers, while 2 Manager vacancies are expected to be filled with new hires. Perhaps different mentorship-elibility requirements should be determined for the Manager title, so that the incoming Manager hires are included in the mentorship program.
